@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>basic selectors</title>
+  <style type="text/css">
+    /*所有元素设置css.*/
+    * {
+      font-family: 'Lato';
+    }
+
+    /*按元素类型设置css.*/
+    h2 {
+      margin: 4rem 0 0 0;
+    }
+
+    /*div中的所有元素.*/
+    div.universal-selector * {
+      border: 1px dotted black;
+    }
+
+    /*按id设置css.*/
+    div#id-selector {
+      background: #e3e3e3;
+    }
+
+    /*查找容器内子对象, 按类定位设置css.*/
+    div#x-container li.warning {
+      color: red;
+    }
+
+    /*查找容器内子对象, 按对象类型定位设置css.*/
+    div.xtype-selector div {
+      border: 1px solid black;
+    }
+
+  </style>
+</head>
+<body>
+<h2>* Selector</h2>
+<div class="universal-selector">
+  <p> My paragraph here. </p>
+  <ul>
+    <li> List Item 1</li>
+    <li> List Item 2</li>
+  </ul>
+
+  <ul>
+    <li> List Item 3</li>
+    <li> List Item 4</li>
+  </ul>
+</div>
+
+<h2>#X Selector</h2>
+<div id="id-selector">
+  <p> My paragraph here. </p>
+  <ul>
+    <li> List Item 1</li>
+    <li> List Item 2</li>
+  </ul>
+
+  <ul>
+    <li> List Item 3</li>
+    <li> List Item 4</li>
+  </ul>
+</div>
+
+<h2>.X Selector</h2>
+<div id="x-container">
+  <p> My paragraph here. </p>
+  <ul>
+    <li> List Item 1</li>
+    <li> List Item 2</li>
+  </ul>
+
+  <ul>
+    <li class="warning">Something went Wrong</li>
+    <li> List Item 4</li>
+  </ul>
+</div>
+
+<h2>X Selector</h2>
+<div class="xtype-selector">
+  <div id="xtype-container">
+    <p> My paragraph here. </p>
+    <ul>
+      <li> List Item 1</li>
+      <li> List Item 2</li>
+    </ul>
+
+    <ul>
+      <li class="warning">Something went Wrong</li>
+      <li> List Item 4</li>
+    </ul>
+  </div>
+
+  <p> Paragraph outside of div </p>
+</div>
+</body>
+</html>

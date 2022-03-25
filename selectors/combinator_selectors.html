@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Combinator selectors</title>
+
+  <style type="text/css">
+    * {
+      font-family: 'Lato';
+    }
+
+    h2 {
+      margin: 4rem 0 0 0;
+    }
+
+    /*容器中所有的子对象.*/
+    div.xy-selector div p {
+      color: red;
+    }
+
+    /*定位紧跟于某个对象的元素(相邻).*/
+    div#adj-container ul + p {
+      color: green;
+    }
+
+    /*定位于容器内的直接相邻的所有元素.*/
+    div#direct-container > ul {
+      border: 1px solid yellow;
+    }
+
+    /*定位元素相邻的元素.*/
+    div#sib-container ul ~ p {
+      color: green;
+    }
+
+  </style>
+</head>
+<body>
+<h2>X Y Selector</h2>
+<div class="xy-selector">
+  <div id="xy-container">
+    <p> My paragraph here. </p>
+    <ul>
+      <li> List Item 1</li>
+      <li> List Item 2</li>
+    </ul>
+
+    <ul>
+      <li class="warning">Something went Wrong</li>
+      <li> List Item 4</li>
+    </ul>
+    <p> My paragraph here end...... </p>
+  </div>
+
+  <p> Paragraph outside of div </p>
+</div>
+
+<h2>X + Y Selector</h2>
+<div id="adj-container">
+  <p> First Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+  <ul>
+    <li> List Item</li>
+    <li> List Item</li>
+    <li> List Item</li>
+    <li> List Item</li>
+  </ul>
+
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+</div>
+
+<h2>X > Y Selector</h2>
+
+<div id="direct-container">
+  <ul>
+    <li> List Item
+      <ul>
+        <li> Child</li>
+      </ul>
+    </li>
+    <li> List Item</li>
+    <li> List Item</li>
+    <li> List Item</li>
+  </ul>
+
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+  <ul>
+    <li> Second Item</li>
+    <li> Second Item</li>
+    <li> Second Item</li>
+  </ul>
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+</div>
+
+<h2>X ~ Y Selector</h2>
+<div id="sib-container">
+  <ul>
+    <li> List Item
+      <ul>
+        <li> Child</li>
+      </ul>
+    </li>
+    <li> List Item</li>
+    <li> List Item</li>
+    <li> List Item</li>
+  </ul>
+
+  <p> Lorem ipsum dolor sit amet, <a href="#" title="Some title">consectetur</a> adipisicing elit, sed do eiusmod
+    tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+</div>
+</body>
+</html>
