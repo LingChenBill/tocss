@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attribute selectors</title>
+
+  <style type="text/css">
+    * {
+      font-family: 'Lato'
+    }
+
+    h2 {
+      margin: 4rem 0 0 0;
+    }
+
+    /*定位a标签中有title的元素.*/
+    div#aatr-container a[title] {
+      color: red;
+    }
+
+    /*定位某个特定的href的a元素.*/
+    div#batr-container a[href="http://net.tutsplus.com"] {
+      color: yellow;
+    }
+
+    /*定位href中有tuts字符的a元素.*/
+    div#catr-container a[href*="tuts"] {
+      color: aqua;
+    }
+
+    /*定位开头的http的a元素.*/
+    div#datr-container a[href^="http"] {
+      color: green;
+    }
+
+    /*定位href结尾是jpg的a元素.*/
+    div#eatr-container a[href$=".jpg"] {
+      color: rebeccapurple;
+    }
+
+    /*定位某个属性的a元素.*/
+    div#fatr-container a[data-filetype="image"] {
+      color: greenyellow;
+    }
+
+  </style>
+</head>
+<body>
+<h2>X[title] Selector</h2>
+<div id="aatr-container">
+  <ul>
+    <li> List Item
+      <ul>
+        <li> Child</li>
+      </ul>
+    </li>
+    <li> List Item</li>
+    <li> List Item</li>
+    <li> List Item</li>
+  </ul>
+
+  <p> Lorem ipsum dolor sit amet, <a href="#" title="Some title">consectetur</a> adipisicing elit, sed do eiusmod
+    tempor. </p>
+  <p> Lorem ipsum dolor sit amet, <a href="#" title="Some title">consectetur</a> adipisicing elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+</div>
+
+<h2>X[href="foo"] Selector</h2>
+
+<div id="batr-container">
+  <ul>
+    <li> List Item
+      <ul>
+        <li> Child</li>
+      </ul>
+    </li>
+    <li> List Item</li>
+    <li> List Item</li>
+    <li> List Item</li>
+  </ul>
+
+  <p> Lorem ipsum dolor sit amet, <a href="#" title="Some title">consectetur</a> adipisicing elit, sed do <a
+    href="http://nettuts.com">Nettuts</a> tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum <a href="http://net.tutsplus.com">Nettuts+</a> sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor. </p>
+</div>
+
+<h2>X[href*="nettuts"] Selector</h2>
+<div id="catr-container">
+  <ul>
+    <li> List Item
+      <ul>
+        <li> Child</li>
+      </ul>
+    </li>
+    <li> List Item</li>
+    <li> List Item</li>
+    <li> List Item</li>
+  </ul>
+
+  <p> Lorem ipsum dolor sit amet, <a href="#" title="Some title">consectetur</a> adipisicing elit, sed do <a
+    href="http://nettuts.com">Nettuts</a> tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum <a href="http://net.tutsplus.com">Nettuts+</a> sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor. </p>
+</div>
+
+<h2>a[href^="http"] Selector</h2>
+<div id="datr-container">
+  <ul>
+    <li> List Item
+      <ul>
+        <li> Child</li>
+      </ul>
+    </li>
+    <li> List Item</li>
+    <li> List Item</li>
+    <li> List Item</li>
+  </ul>
+
+  <p> Lorem ipsum dolor sit amet, <a href="#" title="Some title">consectetur</a> adipisicing elit, sed do <a
+    href="http://nettuts.com">Nettuts</a> tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum <a href="http://net.tutsplus.com">Nettuts+</a> sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor. </p>
+</div>
+
+<h2>X[href$=".jpg"] Selector</h2>
+<div id="eatr-container">
+  <ul>
+    <li> List Item
+      <ul>
+        <li> Child</li>
+      </ul>
+    </li>
+    <li> List Item</li>
+    <li> List Item</li>
+    <li> List Item</li>
+  </ul>
+
+  <p> Lorem ipsum dolor sit amet, <a href="#" title="Some title">consectetur</a> adipisicing elit, sed do <a
+    href="http://nettuts.com">Nettuts</a> tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum <a href="./imgs/preivew.png">Nettuts+</a> sit amet, consectetur "<a
+    href="./imgs/preview.jpg">Getting Good with Git</a>" elit, sed do eiusmod
+    tempor. </p>
+</div>
+
+<h2>X[foo~="bar"] Selector</h2>
+<div id="fatr-container">
+  <ul>
+    <li> List Item
+      <ul>
+        <li> Child</li>
+      </ul>
+    </li>
+    <li> List Item</li>
+    <li> List Item</li>
+    <li> List Item</li>
+  </ul>
+
+  <p> Lorem ipsum dolor sit amet, <a href="#" title="Some title">consectetur</a> adipisicing elit, sed do <a
+    href="http://nettuts.com">Nettuts</a> tempor. </p>
+  <p><a href="imgs/preivew.png" data-filetype="images">PNG Image</a>
+    ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum dolor sit amet, consectetur <a href="#">adipisicing</a> elit, sed do eiusmod tempor. </p>
+  <p> Lorem ipsum <a href="http://net.tutsplus.com">Nettuts+</a> sit amet, consectetur "<a
+    href="imgs/preview.jpg" data-filetype="image">Getting Good with Git</a>"
+    elit, sed do eiusmod tempor. </p>
+</div>
+</body>
+</html>
