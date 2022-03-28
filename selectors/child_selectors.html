@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>child selectors</title>
+  <style type="text/css">
+    ul {
+      width: 200px;
+      margin: 60px auto;
+      background: #292929;
+      color: white;
+      list-style: none;
+      padding-left: 0;
+    }
+
+    li {
+      padding: 10px;
+      border-bottom: 1px solid black;
+      border-top: 1px solid #3c3c3c;
+    }
+
+    /*开始的li元素.*/
+    li:first-child {
+      border-top: none;
+    }
+
+    /*最后的li元素.*/
+    li:last-child {
+      border-bottom: none;
+    }
+
+    li:only-of-type {
+      font-weight: bold;
+    }
+
+    /*定位div中只有一个的p元素.*/
+    div p:only-child {
+      color: red;
+    }
+
+    /*定位于第一个是ul类型元素中的第二个子元素li(index从1开始).*/
+    ul:first-of-type > li:nth-child(2) {
+      color: green;
+      font-weight: bold;
+    }
+
+    /*定位相邻于p元素的ul中的最后一个li元素.*/
+    p ~ ul li:last-child {
+      color: yellow;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+<ul>
+  <li> List Item One</li>
+  <li> List Item Two</li>
+  <li> List Item Three</li>
+</ul>
+
+<div><p> My paragraph here. </p></div>
+
+<div>
+  <p> Two paragraphs total. </p>
+  <p> Two paragraphs total. </p>
+</div>
+
+<div>
+  <p> My paragraph here. </p>
+  <ul>
+    <li> List Item 1</li>
+    <li> List Item 2</li>
+  </ul>
+
+  <ul>
+    <li> List Item 3</li>
+    <li> List Item 4</li>
+  </ul>
+</div>
+</body>
+</html>
